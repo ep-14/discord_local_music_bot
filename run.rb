@@ -1,30 +1,56 @@
+#!/usr/bin/env ruby
+
 require 'discordrb'
+require_relative 'config.rb'
 
-bot_token = 'MzIxMjUwODM2NTM1ODM2Njcy.DBbTqw.cvF7Fipxb6aBvgXWKRiNM5ldn9Y'
-bot_id = 321250836535836672
+bot = Discordrb::Commands::CommandBot.new token: Config.token, client_id: Config.appid, prefix: Config.prefix
 
-bot = Discordrb::Commands::CommandBot.new token: bot_token, client_id: bot_id, prefix: '>'
+music = Array.new
 
-music = []
-File.open('lib/music.lib', 'r') {|f|
-  music = f.readlines
-}
+
+bot.command(:load) do |event|
+  File.open('lib/music.lib', 'r') { |file|
+    music = file.readlines
+  }
+  event.send_message("loading complete")
+end
+
+bot.command(:put) do |event|
+  music.each do |file|
+    event.send_message("#{file}")
+  end
+end
 
 bot.command(:join) do |event|
   channel = event.user.voice_channel
   next "You're not in any voice channel!" unless channel
   bot.voice_connect(channel)
-  "Connected to voice channel: #{channel.name}"
+  event.voice.volume = 0.15
+  event.send_message("Connected to voice channel: #{channel.name}")
 end
 
 bot.command(:play) do |event|
-  voice_bot = event.voice
-  voice_bot.play_file("music/10 Melted Snow (四条貴音ソロVer.).mp3")
+  music.each do |file|
+    bot.game = "#{file}"
+    file = "music/#{file}".chomp!
+    voice_bot = event.voice
+    voice_bot.play_file("#{file}")
+  end
 end
 
-bot.command(:put_info) do |event|
-  i = rand(200)
-  puts music[0]
+bot.command(:pause) do |event|
+  voice_bot = event.voice
+  voice_bot.pause
+end
+
+bot.command(:resume) do |event|
+  voice_bot = event.voice
+  voice_bot.continue
+end
+
+bot.command(:shuffle) do |event|
+  music = music.shuffle
+  event.send_message("shuffle complete!")
 end
 
 bot.run

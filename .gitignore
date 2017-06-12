@@ -1,5 +1,11 @@
-/data
-/music
-/lib
 *.swp
 test*
+
+config.rb
+
+/music
+/lib
+
+*.mp3
+*.wav
+*.flac
