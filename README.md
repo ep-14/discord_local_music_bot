@@ -5,11 +5,11 @@ CentOS7で開発しています。
 
 ## 必須
 
-ruby2.3.x
-discordrb
-libsodium-1.0.10 [link]("https://download.libsodium.org/libsodium/releases/")
-opus-1.1.5 [link]("https://www.opus-codec.org/downloads/")
-ffmpeg-2.6.8
+ruby2.3.x  
+discordrb  
+libsodium-1.0.10 [link]("https://download.libsodium.org/libsodium/releases/")  
+opus-1.1.5 [link]("https://www.opus-codec.org/downloads/")  
+ffmpeg-2.6.8  
 
 ## 使い方
 
@@ -35,17 +35,17 @@ $ ruby run.rb
 
 ## コマンド
 
-- join
+- *join*
 自分がボイスチャンネルに入っている状態でこのコマンドを使うと、現在入っているボイスチャンネルにボットを呼び出す事ができる。
 
-- load
+- *load*
 ライブラリに登録されている音楽のリストを読み込む
 
-- shuffle
+- *shuffle*
 読み込んだ音楽のリストをシャッフルする
 
-- pause
+- *pause*
 再生を一時停止する
 
-- resume
+- *resume*
 一時停止を解除する
