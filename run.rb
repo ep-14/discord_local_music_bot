@@ -7,7 +7,6 @@ bot = Discordrb::Commands::CommandBot.new token: Config.token, client_id: Config
 
 music = Array.new
 
-
 bot.command(:load) do |event|
   File.open('lib/music.lib', 'r') { |file|
     music = file.readlines
