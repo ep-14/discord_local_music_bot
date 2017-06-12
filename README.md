@@ -3,12 +3,13 @@
 ローカルに保存されている音楽をディスコードのボイスチャンネルに流すためのBotです。
 CentOS7で開発しています。
 
-## 必須
+## 開発環境
 
-ruby2.3.x  
+CentOS7.3
+ruby2.3.3  
 discordrb  
-libsodium-1.0.10 [link]("https://download.libsodium.org/libsodium/releases/")  
-opus-1.1.5 [link]("https://www.opus-codec.org/downloads/")  
+libsodium-1.0.10 [link](https://download.libsodium.org/libsodium/releases/)  
+opus-1.1.5 [link](https://www.opus-codec.org/downloads/)  
 ffmpeg-2.6.8  
 
 ## 使い方
