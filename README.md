@@ -1,11 +1,10 @@
 # discord_local_music_bot
 
 ローカルに保存されている音楽をディスコードのボイスチャンネルに流すためのBotです。
-CentOS7で開発しています。
 
 ## 開発環境
 
-CentOS7.3
+CentOS7.3  
 ruby2.3.3  
 discordrb  
 libsodium-1.0.10 [link](https://download.libsodium.org/libsodium/releases/)  
@@ -36,17 +35,17 @@ $ ruby run.rb
 
 ## コマンド
 
-- *join*
+- *join*:
 自分がボイスチャンネルに入っている状態でこのコマンドを使うと、現在入っているボイスチャンネルにボットを呼び出す事ができる。
 
-- *load*
+- *load*:
 ライブラリに登録されている音楽のリストを読み込む
 
-- *shuffle*
+- *shuffle*:
 読み込んだ音楽のリストをシャッフルする
 
-- *pause*
+- *pause*:
 再生を一時停止する
 
-- *resume*
+- *resume*:
 一時停止を解除する
