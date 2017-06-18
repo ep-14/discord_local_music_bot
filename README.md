@@ -15,17 +15,12 @@ ffmpeg-2.6.8
 
 ```
 $ git clone https://github.com/kanajp/discord_local_music_bot
-$ cd discord_local_music_bot
-$ ./init.sh
+$ cd discord_local_music_bot/config
 $ cp example_config.rb config.rb
 $ vim config.rb
 ```
 
 パラメータを適切に変更しサーバにbotを追加した後に、musicディレクトリの中に音声ファイルを配置し次のコマンドを実行する。
-
-```
-$ ruby library_update.rb
-```
 
 ここまで終わったらあとは起動するだけ。
 
@@ -33,19 +28,5 @@ $ ruby library_update.rb
 $ ruby run.rb
 ```
 
-## コマンド
-
-- *join*:
-自分がボイスチャンネルに入っている状態でこのコマンドを使うと、現在入っているボイスチャンネルにボットを呼び出す事ができる。
-
-- *load*:
-ライブラリに登録されている音楽のリストを読み込む
-
-- *shuffle*:
-読み込んだ音楽のリストをシャッフルする
-
-- *pause*:
-再生を一時停止する
-
-- *resume*:
-一時停止を解除する
+Botが起動したらDiscordのチャット欄に[prefix]helpと打ち込むとコマンドのリストが表示される。
+prefixはデフォルトから変更していなければ'>'に設定されているので、>helpと入力する。
