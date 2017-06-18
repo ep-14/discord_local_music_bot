@@ -1,11 +1,11 @@
+# 邪魔なファイル
 *.swp
-test*
+*test*
 
-config.rb
+# 公開するべきではない情報が入っているファイル
+config/config.rb
 
-/music
-/lib
-
-*.mp3
-*.wav
-*.flac
+# 中身は必要ないもの
+music/*
+lib/*
+!.gitkeep
